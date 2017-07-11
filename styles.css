@@ -1,0 +1,46 @@
+body {
+  background-image: url('img/pexels-photo-268883.jpeg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  border:red solid 5px;
+  margin: auto;
+  color: white;
+}
+
+header {
+  display: block;
+}
+
+header h1 {
+  text-align: center;
+  color: black;
+}
+
+.icon-menu {
+  display: hidden;
+}
+nav {
+  display: block;
+}
+
+nav ul {
+  background-color: orange;
+  height: auto;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 10%;
+}
+
+nav li:hover {
+  background-color: red;
+  color: black;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
