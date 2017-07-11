@@ -1,0 +1,68 @@
+body {
+  background-image: url('img/pexels-photo-268883.jpeg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  border:red solid 5px;
+  margin: auto;
+  color: white;
+}
+
+header {
+  display: block;
+}
+
+header h1 {
+  text-align: center;
+  color: black;
+}
+
+.icon-menu {
+  display: none;
+}
+nav {
+  text-align: top;
+  display: block;
+}
+
+nav ul {
+  background-color: orange;
+  height: auto;
+}
+
+nav li {
+  display: inline;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 9%;
+}
+
+nav li:hover {
+  background-color: red;
+  color: black;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 600px){
+  .icon-menu{
+    display: inline-block;
+  }
+
+  .icon-menu:hover li {
+
+    display: block;
+    background-color: orange;
+  }
+
+  nav li{
+    display: none;
+  }
+}
