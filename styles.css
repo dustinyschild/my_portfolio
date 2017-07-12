@@ -1,4 +1,5 @@
 body {
+  position: relative;
   background-image: url('img/pexels-photo-268883.jpeg');
   background-size: cover;
   background-repeat: repeat-y;
@@ -16,53 +17,91 @@ header h1 {
   color: black;
 }
 
-.icon-menu {
-  display: none;
-}
-nav {
-  text-align: top;
-  display: block;
+img {
+  width: 100%;
+  max-width: 400px;
 }
 
-nav ul {
-  background-color: orange;
-  height: auto;
-}
-
-nav li {
-  display: inline;
-  text-align: center;
-  font-size: 1.5em;
-  padding: 9%;
-}
-
-nav li:hover {
-  background-color: red;
-  color: black;
-}
 
 li a {
   text-decoration: none;
   color: inherit;
 }
 
-img {
-  width: 100%;
-  max-width: 400px;
+nav ul {
+  display: block;
+  width: 30%;
+  border: lightgreen solid 3px;
+  background-color: orange;
 }
 
-@media only screen and (max-width: 600px){
-  .icon-menu{
-    display: inline-block;
+nav .dropdown:hover {
+  color: black;
+}
+
+.social {
+  display: none;
+}
+
+.sociallinks:hover ul {
+  display: block;
+}
+
+section {
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  nav li {
+    display: none;
   }
 
-  .icon-menu:hover li {
-
+  .icon-menu{
+    font-size: 2em;
+    width: 30%;
     display: block;
+  }
+
+  .icon-menu:hover nav{
+    
+  }
+
+  .dropdown {
+    display: none;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 9%;
+  }
+
+  .hamburger-nav:hover .dropdown{
+    display: inline;
     background-color: orange;
   }
 
-  nav li{
+  .hamburger-nav:hover ul {
+    width: 80px;
+  }
+}
+
+@media only screen and (min-width: 600px){
+
+  body {
+    border: black solid 5px;
+  }
+
+  .icon-menu {
     display: none;
+  }
+
+  nav ul {
+    height: auto;
+    display: inline;
+    position: absolute;
+  }
+
+  nav .dropdown {
+    display: inline;
+    height: auto;
   }
 }
