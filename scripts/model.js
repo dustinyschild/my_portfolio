@@ -1,6 +1,6 @@
 'use strict';
 
-function Project(name, img, url, repoUrl, contributors){
+function Project(name, img, url, repoUrl, contributors) {
   this.name = projectsData.name;
   this.img = projectsData.img;
   this.url = projectsData.url;
@@ -10,19 +10,16 @@ function Project(name, img, url, repoUrl, contributors){
 
 var projects = [];
 
-projectsData.forEach(function(projectObject){
-  projects.push(new Project(projectObject));
+projectsData.forEach(function(projectsData){
+  console.log(projectsData);
+  projects.push(new Project(projectsData));
   console.log(projects);
 });
 
 var $projects = $('.projectscontainer');
-projects.forEach(function(projects){
-  $($projects).append('<h2>' + projects.name + '</h2>',
+projects.forEach(function(){
+  $projects.append('<h2>' + projects.name + '</h2>',
   '<a href="' + projects.url + '">See Project Here</a>',
   '<a href="' + projects.repoUrl + '">See Repository Here</a>'
-);
+  );
 });
-//projects.forEach(function(projects){
-  //$projects.append('<h2>' + this.name + '</h2>');
-  //console.log($projects);
-//});
