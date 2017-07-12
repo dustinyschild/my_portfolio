@@ -1,0 +1,60 @@
+@media only screen and (max-width: 600px) {
+
+  nav li {
+    display: none;
+  }
+
+  .icon-menu{
+    font-size: 2em;
+    width: 30%;
+    display: block;
+  }
+
+  .dropdown {
+    display: none;
+    font-size: 1em;
+    padding: 9%;
+  }
+
+  .hamburger-nav:hover .dropdown{
+    display: inline;
+  }
+
+  .hamburger-nav:hover ul {
+    width: 80px;
+  }
+
+  .hamburger-nav li a {
+    padding: 10px;
+  }
+
+  .sociallinks:hover ul {
+    display: block;
+  }
+
+  .sociallinks:hover .popout {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 600px){
+
+  body {
+    border: black solid 5px;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+
+  nav ul {
+    height: 2em;
+    display: inline;
+    position: absolute;
+  }
+
+  nav .dropdown {
+    display: inline;
+    height: auto;
+  }
+}
