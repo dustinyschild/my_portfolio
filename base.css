@@ -1,0 +1,46 @@
+body {
+  position: relative;
+  background-image: url('img/pexels-photo-268883.jpeg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  border:red solid 5px;
+  margin: auto;
+  color: white;
+}
+
+header {
+  display: block;
+}
+
+header h1 {
+  text-align: center;
+  color: black;
+}
+
+.projectscontainer a {
+  display: block;
+}
+
+img {
+  width: 100%;
+  max-width: 400px;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav ul {
+  display: block;
+  width: 30%;
+  background-color: orange;
+}
+
+.social {
+  display: none;
+}
+
+section {
+  padding: 10px;
+}
