@@ -31,20 +31,11 @@ li a {
 nav ul {
   display: block;
   width: 30%;
-  border: lightgreen solid 3px;
   background-color: orange;
-}
-
-nav .dropdown:hover {
-  color: black;
 }
 
 .social {
   display: none;
-}
-
-.sociallinks:hover ul {
-  display: block;
 }
 
 section {
@@ -63,24 +54,30 @@ section {
     display: block;
   }
 
-  .icon-menu:hover nav{
-    
-  }
-
   .dropdown {
     display: none;
-    text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 9%;
   }
 
   .hamburger-nav:hover .dropdown{
     display: inline;
-    background-color: orange;
   }
 
   .hamburger-nav:hover ul {
     width: 80px;
+  }
+
+  .hamburger-nav li a {
+    padding: 10px;
+  }
+
+  .sociallinks:hover ul {
+    display: block;
+  }
+
+  .sociallinks:hover .popout {
+    display: block;
   }
 }
 
@@ -95,7 +92,7 @@ section {
   }
 
   nav ul {
-    height: auto;
+    height: 2em;
     display: inline;
     position: absolute;
   }

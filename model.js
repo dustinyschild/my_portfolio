@@ -11,3 +11,8 @@ var projects = [
   new Project('About Me', 'https://dustinyschild.github.io/about_me/', 'https://github.com/dustinyschild/about_me'),
   new Project('Cookie Stand', 'https://dustinyschild.github.io/cookie-stand/', 'https://github.com/dustinyschild/cookie-stand')
 ];
+
+$(document).ready(function(){
+  var $projects = $('.projects');
+  console.log($projects);
+});
