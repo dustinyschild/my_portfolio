@@ -7,6 +7,7 @@ $(document).ready(function(){
 });
 
 viewObject.navHandler = function(){
-  var navTabs = $('.hamburger-nav.tab');
-  console.log(navTabs);
+  $('.hamburger-nav').on('click', 'li.tab', function(item){
+    console.log(this);
+  });
 };
