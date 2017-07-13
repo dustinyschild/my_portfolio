@@ -1,3 +1,5 @@
+'use strict';
+
 var projectsData = [{
   name: 'Check In',
   img: 'img/CheckIn.png',
