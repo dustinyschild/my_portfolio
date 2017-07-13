@@ -11,9 +11,7 @@ function Project(object) {
 var projects = [];
 
 projectsData.forEach(function(projectObject){
-  console.log(projectObject);
   projects.push(new Project(projectObject));
-  console.log(projects);
 });
 
 var $projects = $('.projectscontainer');

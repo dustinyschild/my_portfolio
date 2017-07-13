@@ -22,4 +22,3 @@ var projectsData = [{
   contributors: 'Dustin(me)'
 }];
 console.log(projectsData);
-console.log('rawData rendered');
