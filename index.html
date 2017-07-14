@@ -7,6 +7,15 @@
   <link href="styles/reset.css" rel="stylesheet">
   <link href="styles/base.css" rel="stylesheet">
   <link href="styles/modules.css" rel="stylesheet">
+  <script id="template-project" type="text/x-handlebars-template">
+  <section id="project" class="projectscontainer">
+    <h2>{{Name}}</h2>
+    <img src="{{img}}"/>
+    <p>Site: <a href="{{url}}">{{name}}</a></p>
+    <p><a href="{{repoUrl}}">Repository</a></p>
+    <p>{{{contributors}}}</p>
+  </section>
+  </script>
 </head>
 <body>
   <header>
@@ -50,14 +59,14 @@
     </p>
   </section>
 
-  <section id="projects" class="projectscontainer"></section>
+  <section id="projects"></section>
 
   <footer>
     <p>Footer info</p>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="scripts/rawData.js" type="text/javascript"></script>
-  <script src="scripts/model.js" type="text/javascript"></script>
   <script src="scripts/model.js" type="text/javascript"></script>
   <script src="scripts/views.js" type="text/javascript"></script>
 </body>
