@@ -7,6 +7,15 @@
   <link href="styles/reset.css" rel="stylesheet">
   <link href="styles/base.css" rel="stylesheet">
   <link href="styles/modules.css" rel="stylesheet">
+  <script id="template-project" type="text/x-handlebars-template">
+  <section id="project" class="projectscontainer">
+    <h2>{{Name}}</h2>
+    <img src="{{img}}"/>
+    <p>Site: <a href="{{url}}">{{name}}</a></p>
+    <p><a href="{{repoUrl}}">Repository</a></p>
+    <p>{{{contributors}}}</p>
+  </section>
+  </script>
 </head>
 <body>
   <header>
@@ -49,8 +58,6 @@
       Currently training with front end development software, i.e. html, css, javascript
     </p>
   </section>
-
-  <section id="projects" class="projectscontainer"></section>
 
   <footer>
     <p>Footer info</p>

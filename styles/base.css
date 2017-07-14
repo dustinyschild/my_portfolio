@@ -1,11 +1,11 @@
 body {
   position: relative;
-  background-image: url('img/pexels-photo-268883.jpeg');
+  background-image: url('../img/pexels-photo-268883.jpeg');
   background-size: cover;
   background-repeat: repeat-y;
   border:red solid 5px;
   margin: auto;
-  color: black;
+  color: white;
 }
 
 header {
@@ -28,7 +28,7 @@ img {
 
 li a {
   text-decoration: none;
-  /*color: inherit;*/
+  color: inherit;
 }
 
 nav ul {

@@ -5,7 +5,7 @@ var projectsData = [{
   img: 'img/CheckIn.png',
   url: 'https://dustinyschild.github.io/hotel-final-project/',
   repoUrl: 'https://github.com/dustinyschild/hotel-final-project',
-  contributors: 'Dustin(me), Benjamin, Chuck'
+  contributors: 'Dustin(me), <a href="https://github.com/bbeeksma">Benjamin</a>, <a href="https://github.com/thecforsythe">Chuck</a>'
 },
 {
   name: 'Cookie Stand',
