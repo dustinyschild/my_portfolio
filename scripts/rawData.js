@@ -1,3 +1,5 @@
+'use strict';
+
 var projectsData = [{
   name: 'Check In',
   img: 'img/CheckIn.png',
@@ -20,4 +22,3 @@ var projectsData = [{
   contributors: 'Dustin(me)'
 }];
 console.log(projectsData);
-console.log('rawData rendered');

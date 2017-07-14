@@ -4,9 +4,9 @@
 <head>
   <title>Dustin Yelland</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="reset.css" rel="stylesheet">
-  <link href="base.css" rel="stylesheet">
-  <link href="modules.css" rel="stylesheet">
+  <link href="styles/reset.css" rel="stylesheet">
+  <link href="styles/base.css" rel="stylesheet">
+  <link href="styles/modules.css" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -14,9 +14,9 @@
     <nav class="hamburger-nav">
       <div class="icon-menu">H</div>
       <ul>
-        <li class="dropdown"><a href="#">Link1</a></li>
-        <li class="dropdown"><a href="#">Link2</a></li>
-        <li class="dropdown"><a href="#">Link3</a></li>
+        <li class="dropdown tab" data-content="aboutme">About Me</li>
+        <li class="dropdown tab" data-content="skills">Skills/Services</li>
+        <li class="dropdown tab" data-content="projects">Projects</li>
         <li class="sociallinks dropdown">
           Social
           <ul class="social">
@@ -30,37 +30,27 @@
     </nav>
   </header>
 
-  <section>
+  <section id="aboutme">
+    <h2>About Me</h2>
+    <img src="img/profile_pic.jpg"/>
+    <p>
+      Some personal info here.
+    </p>
+
     <h2>Current Position/Occupation</h2>
     <p>
       I am currently working through the DeltaV coding bootcamp.
     </p>
   </section>
 
-  <hr>
-
-  <section>
-    <h2>About Me</h2>
-    <img src="img/profile_pic.jpg"/>
-    <p>
-      Some personal info here.
-    </p>
-  </section>
-
-  <hr>
-
-  <section>
+  <section id="skills">
     <h2>Skills/Services</h2>
     <p>
       Currently training with front end development software, i.e. html, css, javascript
     </p>
   </section>
 
-  <hr>
-
-  <section class="projectscontainer"></section>
-
-  <hr>
+  <section id="projects" class="projectscontainer"></section>
 
   <footer>
     <p>Footer info</p>
@@ -68,6 +58,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="scripts/rawData.js" type="text/javascript"></script>
   <script src="scripts/model.js" type="text/javascript"></script>
-
+  <script src="scripts/model.js" type="text/javascript"></script>
+  <script src="scripts/views.js" type="text/javascript"></script>
 </body>
 </html>
