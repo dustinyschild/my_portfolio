@@ -4,6 +4,7 @@ var viewObject = {};
 
 $(document).ready(function(){
   viewObject.navHandler();
+  viewObject.handlebarsInjection();
 });
 
 viewObject.navHandler = function(){
@@ -17,4 +18,10 @@ viewObject.navHandler = function(){
 
   });
   $('.hamburger-nav .tab:first').click();
+};
+
+viewObject.handlebarsInjection = function() {
+  var source = $('#projects');
+  console.log(source);
+  //var template = Handlebars.compile(source);
 };
