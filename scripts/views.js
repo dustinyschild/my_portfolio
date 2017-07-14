@@ -3,6 +3,7 @@
 $(document).ready(function(){
   Project.prototype.navHandler();
   Project.prototype.toHtml();
+  navClick();
 });
 
 var projects = [];
@@ -34,4 +35,11 @@ Project.prototype.toHtml = function() {
   var template = Handlebars.compile(source);
   console.log(this);
   return template(this);
+};
+
+function navClick(){
+  $('.hamburger-nav').on('click', 'i', function(){
+    $('.hamburger-nav').toggleClass('unclicked').toggleClass('clicked');
+    console.log($('.hamburger-nav'));
+  });
 };

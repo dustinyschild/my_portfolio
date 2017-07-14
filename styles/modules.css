@@ -10,30 +10,26 @@
     display: block;
   }
 
-  .dropdown {
+  .fa-bars {
+    float: left;
+    margin-top: -50px;
+    margin-left: 10px;
+  }
+
+  .unclicked .dropdown {
     display: none;
     font-size: 1em;
     padding: 9%;
   }
 
-  .hamburger-nav:hover .dropdown{
-    display: inline;
-  }
-
-  .hamburger-nav:hover ul {
-    width: 80px;
+  .clicked .dropdown {
+    display: block;
+    font-size: 1em;
+    padding: 9%;
   }
 
   .hamburger-nav li a {
     padding: 10px;
-  }
-
-  .sociallinks:hover ul {
-    display: block;
-  }
-
-  .sociallinks:hover .popout {
-    display: block;
   }
 }
 
