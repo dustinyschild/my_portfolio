@@ -1,13 +1,22 @@
 'use strict';
 
-var viewObject = {};
-
 $(document).ready(function(){
-  viewObject.navHandler();
-  viewObject.handlebarsInjection();
+  Project.prototype.navHandler();
+  Project.prototype.toHtml();
 });
 
-viewObject.navHandler = function(){
+var projects = [];
+
+function Project(rawDataObj){
+  for (var key in rawDataObj){
+    this[key] = rawDataObj[key];
+  }
+}
+rawData.forEach(function(thisProject){
+  projects.push(new Project(thisProject));
+});
+
+Project.prototype.navHandler = function(){
   $('.hamburger-nav').on('click', 'li.tab', function(item){
     console.log(this);
     $('section').hide();
@@ -20,8 +29,8 @@ viewObject.navHandler = function(){
   $('.hamburger-nav .tab:first').click();
 };
 
-viewObject.handlebarsInjection = function() {
-  var source = $('#projects');
-  console.log(source);
-  //var template = Handlebars.compile(source);
+Project.prototype.toHtml = function() {
+  var source = $('#template-project').html();
+  var template = Handlebars.compile(source);
+  return template(this);
 };
