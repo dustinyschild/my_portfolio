@@ -12,7 +12,7 @@ function Project(rawDataObj){
     this[key] = rawDataObj[key];
   }
 }
-rawData.forEach(function(thisProject){
+projectsData.forEach(function(thisProject){
   projects.push(new Project(thisProject));
 });
 
@@ -32,5 +32,6 @@ Project.prototype.navHandler = function(){
 Project.prototype.toHtml = function() {
   var source = $('#template-project').html();
   var template = Handlebars.compile(source);
+  console.log(this);
   return template(this);
 };
