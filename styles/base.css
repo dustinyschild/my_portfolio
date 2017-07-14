@@ -3,6 +3,7 @@ body {
   background-image: url('../img/pexels-photo-268883.jpeg');
   background-size: cover;
   background-repeat: repeat-y;
+  font-family: 'Zilla Slab', serif;
   border:red solid 5px;
   margin: auto;
   color: white;
