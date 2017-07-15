@@ -10,24 +10,6 @@
     display: block;
   }
 
-  .fa-bars {
-    float: left;
-    margin-top: -50px;
-    margin-left: 10px;
-  }
-
-  .unclicked .dropdown {
-    display: none;
-    font-size: 1em;
-    padding: 9%;
-  }
-
-  .clicked .dropdown {
-    display: block;
-    font-size: 1em;
-    padding: 9%;
-  }
-
   .hamburger-nav li a {
     padding: 10px;
   }
