@@ -4,6 +4,7 @@ $(document).ready(function(){
   Project.prototype.navHandler();
   Project.prototype.toHtml();
   navClick();
+  //socialNavClick();
 });
 
 var projects = [];
@@ -30,16 +31,16 @@ Project.prototype.navHandler = function(){
   $('.hamburger-nav .tab:first').click();
 };
 
-Project.prototype.toHtml = function() {
-  var source = $('#template-project').html();
-  var template = Handlebars.compile(source);
-  console.log(this);
-  return template(this);
-};
-
 function navClick(){
   $('.hamburger-nav').on('click', 'i', function(){
     $('.hamburger-nav').toggleClass('unclicked').toggleClass('clicked');
     console.log($('.hamburger-nav'));
+  });
+};
+
+function socialNavClick(){
+  $('.social-nav').on('click', 'i', function(){
+    $('.social').toggleClass('clicked').toggleClass('unclicked');
+    console.log('.social');
   });
 };

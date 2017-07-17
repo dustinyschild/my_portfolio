@@ -1,10 +1,16 @@
+/*Color palete
+color: #493843
+color: #61988E
+color: #92977E
+color: #E4572E
+color: #EAEFD3
+*/
+
 body {
   position: relative;
-  background-image: url('../img/pexels-photo-268883.jpeg');
-  background-size: cover;
-  background-repeat: repeat-y;
+  background-color: #493843;
   font-family: 'Zilla Slab', serif;
-  border:red solid 5px;
+  border:#E4572E solid 8px;
   margin: auto;
   color: white;
 }
@@ -15,7 +21,6 @@ header {
 
 header h1 {
   text-align: center;
-  color: black;
 }
 
 .projectscontainer a {
@@ -38,10 +43,33 @@ nav ul {
   background-color: orange;
 }
 
-.social {
+.fa-bars {
+  float: left;
+  margin-top: -50px;
+  margin-left: 10px;
+}
+
+.unclicked .dropdown {
   display: none;
+  font-size: 1em;
+  padding: 9%;
+}
+
+.clicked .dropdown {
+  display: block;
+  font-size: 1em;
+  padding: 9%;
 }
 
 section {
   padding: 10px;
+}
+
+footer {
+  min-height: 75px;
+  color: #493843;
+  background-color: #EAEFD3;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-align: center;
 }
