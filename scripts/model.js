@@ -1,5 +1,7 @@
 'use strict';
 
+var projects = [];
+
 function Project(object) {
   this.name = object.name;
   this.img = object.img;
@@ -8,17 +10,17 @@ function Project(object) {
   this.contributors = object.contributors;
 }
 
-var projects = [];
+Project.prototype.toHtml = function() {
+  var source = $('#template-project').text();
+  var template = Handlebars.compile(source);
+  console.log('handlebars template: ',this);
+  return template(this);
+};
 
 projectsData.forEach(function(projectObject){
   projects.push(new Project(projectObject));
 });
 
-var $projects = $('.projectscontainer');
-projects.forEach(function(object){
-  $projects.append('<h2>' + object.name + '</h2>',
-  '<img src="' + object.img + '"/>',
-  '<a href="' + object.url + '">See Project Here</a>',
-  '<a href="' + object.repoUrl + '">See Repository Here</a>'
-  );
+projects.forEach(function(project){
+  $('#projects').append(project.toHtml());
 });
