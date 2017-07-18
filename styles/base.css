@@ -44,21 +44,36 @@ nav ul {
 }
 
 .fa-bars {
-  float: left;
   margin-top: -50px;
-  margin-left: 10px;
 }
 
-.unclicked .dropdown {
+.left {
+  float: left;
+  margin-left: 15px;
+}
+
+.right {
+  float: right;
+  margin-right: 15px;
+}
+
+.unclicked .tab {
   display: none;
   font-size: 1em;
   padding: 9%;
 }
 
-.clicked .dropdown {
+.clicked .tab {
   display: block;
   font-size: 1em;
   padding: 9%;
+}
+
+.clicked .social {
+  
+}
+
+.unclicked .social {
 }
 
 section {
