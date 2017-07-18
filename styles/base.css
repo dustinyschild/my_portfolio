@@ -11,13 +11,14 @@ body {
   position: relative;
   background-color: #493843;
   font-family: 'Zilla Slab', serif;
-  border:#E4572E solid 8px;
+  border:#EAEFD3 solid 8px;
   margin: auto;
   color: white;
 }
 
 header {
   display: block;
+  height: 30%;
 }
 
 header h1 {
@@ -55,7 +56,7 @@ footer {
   min-height: 75px;
   color: #493843;
   background-color: #EAEFD3;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   text-align: center;
 }

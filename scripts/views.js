@@ -7,9 +7,7 @@ $(document).ready(function(){
   socialNavClick();
 });
 
-var projects = [];
-
-projectsData.forEach(function(thisProject){
+rawData.forEach(function(thisProject){
   projects.push(new Project(thisProject));
 });
 

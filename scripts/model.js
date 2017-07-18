@@ -17,10 +17,32 @@ Project.prototype.toHtml = function() {
   return template(this);
 };
 
-projectsData.forEach(function(projectObject){
+rawData.forEach(function(projectObject){
   projects.push(new Project(projectObject));
 });
 
 projects.forEach(function(project){
   $('#projects').append(project.toHtml());
 });
+
+Project.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
+
+  rawData.forEach(function(ele) {
+    Project.all.push(new Project(ele));
+  });
+};
+
+function fetchAll(){
+  if (localStorage.data){
+    Project.loadAll(JSON.parse(localStorage.data));
+  } else {
+    var rawData = $.getJSON('data/hackerIpsum.json', function(data){
+      localStorage.data('data', JSON.stringify(data));
+      Project.loadAll(data);
+    });
+  }
+  return rawData;
+}
