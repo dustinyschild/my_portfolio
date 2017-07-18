@@ -1,4 +1,5 @@
-/*Color palete
+/*
+Color palete
 color: #493843
 color: #61988E
 color: #92977E
@@ -32,19 +33,8 @@ img {
   max-width: 400px;
 }
 
-li a {
-  text-decoration: none;
+a {
   color: inherit;
-}
-
-nav ul {
-  display: block;
-  width: 30%;
-  background-color: orange;
-}
-
-.fa-bars {
-  margin-top: -50px;
 }
 
 .left {
@@ -55,25 +45,6 @@ nav ul {
 .right {
   float: right;
   margin-right: 15px;
-}
-
-.unclicked .tab {
-  display: none;
-  font-size: 1em;
-  padding: 9%;
-}
-
-.clicked .tab {
-  display: block;
-  font-size: 1em;
-  padding: 9%;
-}
-
-.clicked .social {
-  
-}
-
-.unclicked .social {
 }
 
 section {
