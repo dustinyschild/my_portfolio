@@ -11,38 +11,39 @@ function Project(object) {
 }
 
 Project.prototype.toHtml = function() {
-  var source = $('#template-project').text();
-  var template = Handlebars.compile(source);
-  console.log('handlebars template: ',this);
+  var template = Handlebars.compile($('#template-project').text());
+  //maybe something goes here...Idk...
   return template(this);
 };
 
-rawData.forEach(function(projectObject){
-  projects.push(new Project(projectObject));
-});
-
-projects.forEach(function(project){
-  $('#projects').append(project.toHtml());
-});
-
 Project.loadAll = function(rawData) {
-  rawData.sort(function(a,b) {
-    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-  });
-
   rawData.forEach(function(ele) {
-    Project.all.push(new Project(ele));
-  });
-};
+    projects.push(new Project(ele));
+  })
+}
 
-function fetchAll(){
-  if (localStorage.data){
-    Project.loadAll(JSON.parse(localStorage.data));
+var rawData;
+Project.fetchAll = function() {
+
+  if (localStorage.rawData) {
+
+    console.log('localStorage data found');
+    rawData = JSON.parse(localStorage.getItem('rawData'));
+    Project.loadAll(rawData);
+    // You need to do Something.initIndexPage();
+
   } else {
-    var rawData = $.getJSON('data/hackerIpsum.json', function(data){
-      localStorage.data('data', JSON.stringify(data));
-      Project.loadAll(data);
+
+    console.log("Local storage data not found");
+    $.getJSON('data/rawData.json').done(function(data){
+      rawData = data;
+      console.log(rawData);
+      localStorage.setItem('rawData', JSON.stringify(rawData));
+      Proejct.loadAll(rawData);
+      // You need to do Something.initIndexPage();
+    })
+    .fail(function(){
+      console.log('getJSON failed');
     });
   }
-  return rawData;
 }
