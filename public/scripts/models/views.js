@@ -7,7 +7,7 @@ $(document).ready(function(){
   //socialNavClick();
 });
 
-var projects = [];
+Article.all = [];
 
 function Project(rawDataObj){
   for (var key in rawDataObj){
@@ -15,7 +15,7 @@ function Project(rawDataObj){
   }
 }
 projectsData.forEach(function(thisProject){
-  projects.push(new Project(thisProject));
+  article.all.push(new Project(thisProject));
 });
 
 Project.prototype.navHandler = function(){
