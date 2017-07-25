@@ -6,6 +6,7 @@ var app = app || {};
   const skillsController = {};
 
   skillsController.init = () => {
+    console.log('skills tab');
     $('.tab-content').hide();
     $('#skills').fadeIn();
   }
