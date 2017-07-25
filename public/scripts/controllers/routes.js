@@ -1,3 +1,7 @@
 'use strict';
+var app = app || {};
 
-page('/', )
+page('/', aboutController.init);
+page('/skills', skillsController.init);
+
+page();

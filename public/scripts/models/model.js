@@ -1,6 +1,6 @@
 'use strict';
 
-var projects = [];
+Project.all = [];
 
 function Project(object) {
   this.name = object.name;
