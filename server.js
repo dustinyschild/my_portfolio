@@ -9,10 +9,9 @@ const PORT = 3000;
 app.use(express.static('./public'));
 
 app.get('*', function(request, response){
-  console.log('This runs correctly');
-  response.sendFile('public/index.html', {root: '.'});
+  response.sendFile('index.html', {root: './public'});
 });
 
 app.listen(PORT, function(){
-  console.log('Listening');
+  console.log(`Listening on port ${PORT}`);
 });

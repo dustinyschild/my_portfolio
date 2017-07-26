@@ -36,7 +36,7 @@ Project.fetchAll = function() {
   } else {
     //if localStorage wasnt found it submits an ajax request for the json file
     console.log("Local storage data not found");
-    $.getJSON('data/rawData.json').done(function(data){
+    $.getJSON('/data/rawData.json').done(function(data){
       rawData = data;
       console.log(rawData);
       //stores the json to localStorage for reuse
