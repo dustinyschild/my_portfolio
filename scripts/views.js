@@ -7,10 +7,6 @@ $(document).ready(function(){
   socialNavClick();
 });
 
-rawData.forEach(function(thisProject){
-  projects.push(new Project(thisProject));
-});
-
 function tabHandler(){
   $('.hamburger-nav ul').on('click', 'li.tab', function(item){
     console.log(this);
