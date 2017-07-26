@@ -1,4 +1,5 @@
-/*Color palete
+/*
+Color palete
 color: #493843
 color: #61988E
 color: #92977E
@@ -10,13 +11,14 @@ body {
   position: relative;
   background-color: #493843;
   font-family: 'Zilla Slab', serif;
-  border:#E4572E solid 8px;
+  border:#EAEFD3 solid 8px;
   margin: auto;
   color: white;
 }
 
 header {
   display: block;
+  height: 30%;
 }
 
 header h1 {
@@ -32,33 +34,18 @@ img {
   max-width: 400px;
 }
 
-li a {
-  text-decoration: none;
+a {
   color: inherit;
 }
 
-nav ul {
-  display: block;
-  width: 30%;
-  background-color: orange;
-}
-
-.fa-bars {
+.left {
   float: left;
-  margin-top: -50px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
-.unclicked .dropdown {
-  display: none;
-  font-size: 1em;
-  padding: 9%;
-}
-
-.clicked .dropdown {
-  display: block;
-  font-size: 1em;
-  padding: 9%;
+.right {
+  float: right;
+  margin-right: 15px;
 }
 
 section {
@@ -69,7 +56,7 @@ footer {
   min-height: 75px;
   color: #493843;
   background-color: #EAEFD3;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   text-align: center;
 }

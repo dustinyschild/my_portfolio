@@ -1,25 +1,14 @@
 'use strict';
 
 $(document).ready(function(){
-  Project.prototype.navHandler();
+  navHandler();
+  tabHandler();
   Project.prototype.toHtml();
-  navClick();
-  //socialNavClick();
+  socialNavClick();
 });
 
-var projects = [];
-
-function Project(rawDataObj){
-  for (var key in rawDataObj){
-    this[key] = rawDataObj[key];
-  }
-}
-projectsData.forEach(function(thisProject){
-  projects.push(new Project(thisProject));
-});
-
-Project.prototype.navHandler = function(){
-  $('.hamburger-nav').on('click', 'li.tab', function(item){
+function tabHandler(){
+  $('.hamburger-nav ul').on('click', 'li.tab', function(item){
     console.log(this);
     $('section').hide();
     console.log($('section'));
@@ -31,16 +20,15 @@ Project.prototype.navHandler = function(){
   $('.hamburger-nav .tab:first').click();
 };
 
-function navClick(){
+function navHandler(){
   $('.hamburger-nav').on('click', 'i', function(){
     $('.hamburger-nav').toggleClass('unclicked').toggleClass('clicked');
-    console.log($('.hamburger-nav'));
   });
 };
 
 function socialNavClick(){
   $('.social-nav').on('click', 'i', function(){
-    $('.social').toggleClass('clicked').toggleClass('unclicked');
-    console.log('.social');
+    $('.social-nav').toggleClass('clicked').toggleClass('unclicked');
+    console.log('clicked');
   });
 };
