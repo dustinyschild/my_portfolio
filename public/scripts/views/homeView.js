@@ -2,13 +2,12 @@
 
 var app = app || {};
 
-(module => {
-  const aboutController = {};
+((module) => {
+  const aboutView = {
+    initAboutPage: () => {
 
-  aboutController.init = () => {
-    $('.tab-content').hide();
-    $('#aboutme').fadeIn();
-  }
+    }
+  };
 
-  module.aboutController = aboutController;
+
 })(app);

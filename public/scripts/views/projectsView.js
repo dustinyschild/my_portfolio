@@ -2,13 +2,12 @@
 
 var app = app || {};
 
-(module => {
-  const projectController = {};
+((module) => {
+  const aboutView = {
+    initAboutPage: () => {
+      let template = Handlebars.compile($('#template-project').text());
+    }
+  };
 
-  projectController.init = () => {
-    $('.tab-content').hide();
-    $('#projects').fadeIn();
-  }
 
-  module.projectController = projectsController;
 })(app);
