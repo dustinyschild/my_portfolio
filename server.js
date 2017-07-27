@@ -5,7 +5,7 @@ console.log('Loading server.js');
 const pg = require('pg');
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const conString = process.env.DATABASE_URL;
 pg.defaults.ssl = true;
