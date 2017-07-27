@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/dustinyschild/my_portfolio#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "pg": "^7.0.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
