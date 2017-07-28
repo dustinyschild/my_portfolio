@@ -12,15 +12,15 @@ function Project(object) {
 
 Project.toHtml = function(project) {
   var template = Handlebars.compile($('#template-project').html());
-  console.log('handlebars template: ',template(project));
-  return template(this);
+  console.log('handlebars template: ',template(project), project);
+  return template(project);
 };
 
 Project.loadAll = function(rawData) {
-    rawData.forEach(project => {
+  rawData.forEach(project => {
     Project.all.push(new Project(project));
-    console.log('look here ',Project.all);
   });
+  console.log('projects in Project.all ',Project.all);
 }
 
 var rawData;
@@ -37,11 +37,13 @@ Project.fetchAll = function(){
         console.log(data)
         localStorage.setItem('data', rawData);
         Project.loadAll(JSON.parse(rawData));
-    });
+      });
   }
+  console.log('data ', rawData);
 }
 
 Project.initProjectPage = function(){
+  Project.fetchAll();
   Project.all.forEach(function(project){
     console.log(project)
     $('#projects').append(Project.toHtml(project));

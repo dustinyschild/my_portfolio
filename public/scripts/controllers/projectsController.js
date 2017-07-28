@@ -3,12 +3,12 @@
 var app = app || {};
 
 (module => {
-  const projectController = {};
+  const projectsController = {};
 
-  projectController.init = () => {
+  projectsController.init = () => {
     $('.tab-content').hide();
     $('#projects').fadeIn();
   }
 
-  module.projectController = projectsController;
+  module.projectsController = projectsController;
 })(app);

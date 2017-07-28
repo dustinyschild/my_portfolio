@@ -1,8 +1,7 @@
 'use strict';
 
 $(document).ready(function(){
-  Project.fetchAll();
-  Project.toHtml();
+  Project.initProjectPage();
   navHandler();
   navClick();
   //socialNavClick();
@@ -10,9 +9,7 @@ $(document).ready(function(){
 
 function navHandler(){
   $('.hamburger-nav').on('click', 'li.tab', function(item){
-    console.log(this);
     $('section').hide();
-    console.log($('section'));
     var activeTab = $(this).data('content');
     var sectionId = '#' + activeTab;
     $(sectionId).fadeIn();
