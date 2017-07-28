@@ -1,24 +1,13 @@
 'use strict';
 
 $(document).ready(function(){
-  Project.prototype.navHandler();
+  navHandler();
   Project.prototype.toHtml();
   navClick();
   //socialNavClick();
 });
 
-Article.all = [];
-
-function Project(rawDataObj){
-  for (var key in rawDataObj){
-    this[key] = rawDataObj[key];
-  }
-}
-projectsData.forEach(function(thisProject){
-  article.all.push(new Project(thisProject));
-});
-
-Project.prototype.navHandler = function(){
+function navHandler(){
   $('.hamburger-nav').on('click', 'li.tab', function(item){
     console.log(this);
     $('section').hide();
