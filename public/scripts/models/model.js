@@ -10,17 +10,40 @@ function Project(object) {
   this.contributors = object.contributors;
 }
 
-Project.prototype.toHtml = function() {
-  var source = $('#template-project').text();
-  var template = Handlebars.compile(source);
-  console.log('handlebars template: ',this);
+Project.toHtml = function(project) {
+  var template = Handlebars.compile($('#template-project').html());
+  console.log('handlebars template: ',template(project));
   return template(this);
 };
 
-projectsData.forEach(function(projectObject){
-  projects.push(new Project(projectObject));
-});
+Project.loadAll = function(rawData) {
+    rawData.forEach(project => {
+    Project.all.push(new Project(project));
+    console.log('look here ',Project.all);
+  });
+}
 
-projects.forEach(function(project){
-  $('#projects').append(project.toHtml());
-});
+var rawData;
+Project.fetchAll = function(){
+  if (localStorage.data){
+    console.log(localStorage.data);
+    rawData = localStorage.data;
+    console.log(rawData);
+    Project.loadAll(JSON.parse(rawData));
+  } else {
+    $.getJSON('data/rawData.json').then(
+      (data) => {
+        rawData = JSON.stringify(data);
+        console.log(data)
+        localStorage.setItem('data', rawData);
+        Project.loadAll(JSON.parse(rawData));
+    });
+  }
+}
+
+Project.initProjectPage = function(){
+  Project.all.forEach(function(project){
+    console.log(project)
+    $('#projects').append(Project.toHtml(project));
+  });
+}

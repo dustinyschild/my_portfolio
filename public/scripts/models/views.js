@@ -1,8 +1,9 @@
 'use strict';
 
 $(document).ready(function(){
+  Project.fetchAll();
+  Project.toHtml();
   navHandler();
-  Project.prototype.toHtml();
   navClick();
   //socialNavClick();
 });
