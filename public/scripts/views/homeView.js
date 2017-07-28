@@ -9,5 +9,5 @@ var app = app || {};
     }
   };
 
-
+  module.aboutView = aboutView;
 })(app);
