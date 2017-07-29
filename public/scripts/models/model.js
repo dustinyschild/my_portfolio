@@ -20,36 +20,51 @@ var app = app || {};
 
   Project.loadAll = function(rawData) {
     rawData.forEach(project => {
+      console.log('passed in project',project);
       Project.all.push(new Project(project));
     });
     console.log('projects in Project.all ',Project.all);
   }
 
-  var rawData;
+  var rawData = [];
   Project.fetchAll = function(){
-    if (localStorage.data){
-      rawData = localStorage.data;
-      console.log(rawData);
-      Project.loadAll(JSON.parse(rawData));
-    } else {
-      console.log('initializing localStorage');
-      $.getJSON('data/rawData.json').then(
-        (data) => {
-          rawData = JSON.stringify(data);
-          localStorage.setItem('data', rawData);
-          Project.loadAll(rawData);
+    var eTag;
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/rawData.json',
+      dataType: 'json',
+      complete: function(xhr) {
+        eTag = xhr.getResponseHeader('ETag');
+      }
+    })
+    .then(() => {
+      if (localStorage.eTag && localStorage.eTag === eTag){
+        console.log('eTag matches');
+        rawData = localStorage.data;
+        console.log(rawData);
+      } else {
+        $.getJSON('data/rawData.json',function(data,message,xhr){
+          rawData = data;
+          console.log(data);
+          localStorage.setItem('data', JSON.stringify(data));
+          localStorage.setItem('eTag', xhr.getResponseHeader('ETag'));
         });
-    }
-    console.log('data ', rawData);
-  }
-
-  Project.initProjectPage = function(){
-    Project.fetchAll();
-    Project.all.forEach(function(project){
-      console.log(project)
-      $('#projects').append(Project.toHtml(project));
+      }
+    })
+    .then(() => {
+      console.log('rawData',rawData,'localStorage',localStorage)
+      Project.loadAll(JSON.parse(localStorage.data));
+      console.log('projects loaded ', Project.all.length)
+      Project.all.forEach(function(project){
+        console.log(project)
+        $('#projects').append(Project.toHtml(project));
+      });
     });
   }
 
+  Project.initProjectPage = function(){
+    console.log('initializing page');
+    Project.fetchAll();
+  }
   module.Project = Project;
 })(app);
