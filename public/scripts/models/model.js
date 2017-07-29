@@ -28,17 +28,16 @@ var app = app || {};
   var rawData;
   Project.fetchAll = function(){
     if (localStorage.data){
-      console.log(localStorage.data);
       rawData = localStorage.data;
       console.log(rawData);
       Project.loadAll(JSON.parse(rawData));
     } else {
+      console.log('initializing localStorage');
       $.getJSON('data/rawData.json').then(
         (data) => {
           rawData = JSON.stringify(data);
-          console.log(data)
           localStorage.setItem('data', rawData);
-          Project.loadAll(JSON.parse(rawData));
+          Project.loadAll(rawData);
         });
     }
     console.log('data ', rawData);
