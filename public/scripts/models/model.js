@@ -19,9 +19,8 @@ var app = app || {};
   };
 
   Project.loadAll = function(rawData) {
-    rawData.forEach(project => {
-      console.log('passed in project',project);
-      Project.all.push(new Project(project));
+    Project.all = rawData.map(project => {
+      return new Project(project);
     });
     console.log('projects in Project.all ',Project.all);
   }
