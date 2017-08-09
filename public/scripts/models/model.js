@@ -14,7 +14,6 @@ var app = app || {};
 
   Project.toHtml = function(project) {
     var template = Handlebars.compile($('#template-project').html());
-    console.log('handlebars template: ',template(project), project);
     return template(project);
   };
 
@@ -22,7 +21,6 @@ var app = app || {};
     Project.all = rawData.map(project => {
       return new Project(project);
     });
-    console.log('projects in Project.all ',Project.all);
   }
 
   var rawData = [];
@@ -38,31 +36,25 @@ var app = app || {};
     })
     .then(() => {
       if (localStorage.eTag && localStorage.eTag === eTag){
-        console.log('eTag matches');
         rawData = localStorage.data;
-        console.log(rawData);
       } else {
         $.getJSON('data/rawData.json',function(data,message,xhr){
           rawData = data;
-          console.log(data);
+          console.log(rawData);
           localStorage.setItem('data', JSON.stringify(data));
           localStorage.setItem('eTag', xhr.getResponseHeader('ETag'));
         });
       }
     })
     .then(() => {
-      console.log('rawData',rawData,'localStorage',localStorage)
       Project.loadAll(JSON.parse(localStorage.data));
-      console.log('projects loaded ', Project.all.length)
       Project.all.forEach(function(project){
-        console.log(project)
         $('#projects').append(Project.toHtml(project));
       });
     });
   }
 
   Project.initProjectPage = function(){
-    console.log('initializing page');
     Project.fetchAll();
   }
   module.Project = Project;
