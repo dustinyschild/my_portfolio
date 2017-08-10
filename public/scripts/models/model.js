@@ -34,24 +34,28 @@ var app = app || {};
         eTag = xhr.getResponseHeader('ETag');
       }
     })
-    .then(() => {
-      if (localStorage.eTag && localStorage.eTag === eTag){
-        rawData = localStorage.data;
-      } else {
-        $.getJSON('data/rawData.json',function(data,message,xhr){
-          rawData = data;
-          console.log(rawData);
-          localStorage.setItem('data', JSON.stringify(data));
-          localStorage.setItem('eTag', xhr.getResponseHeader('ETag'));
-        });
-      }
-    })
-    .then(() => {
-      Project.loadAll(JSON.parse(localStorage.data));
-      Project.all.forEach(function(project){
-        $('#projects').append(Project.toHtml(project));
-      });
-    });
+      .then(() => {
+        if (localStorage.eTag && localStorage.eTag === eTag){
+          rawData = localStorage.data;
+          Project.loadAll(JSON.parse(localStorage.data));
+          Project.all.forEach(function(project){
+            $('#projects').append(Project.toHtml(project));
+          });
+        } else {
+          $.getJSON('data/rawData.json',function(data,message,xhr){
+            rawData = data;
+            console.log(rawData);
+            localStorage.setItem('data', JSON.stringify(data));
+            localStorage.setItem('eTag', xhr.getResponseHeader('ETag'));
+            Project.loadAll(JSON.parse(localStorage.data));
+            Project.all.forEach(function(project){
+              $('#projects').append(Project.toHtml(project));
+            });
+          });
+        }
+      })
+      //.then(() => {
+      //});
   }
 
   Project.initProjectPage = function(){
