@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/dustinyschild/my_portfolio#readme",
   "dependencies": {
-    "express": "^4.15.3",
-    "pg": "^7.0.2"
+    "express": "^4.15.4",
+    "pg": "^7.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
