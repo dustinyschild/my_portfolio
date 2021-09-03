@@ -7,9 +7,16 @@ color: #E4572E
 color: #EAEFD3
 */
 
+html {
+  background: url("../img/Dark-blue-wallpaper-HD-download.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   position: relative;
-  background-color: #493843;
   font-family: 'Zilla Slab', serif;
   border:#EAEFD3 solid 8px;
   margin: auto;
